@@ -1,0 +1,14 @@
+{% extends 'layout.html' %}
+{% block content %}
+    {% if result %}
+        <article class="media content-section trans">
+            <div class="article-metadata">
+                <a class="mr-2" href="{{ url_for('contact',post_id=result.id)}}">{{ result.firstname }} {{ result.lastname }}</a>
+                <div class="media-body">
+                    <h2>{{ result.designation }}</h2>
+                    <p class="article-content">{{ result.about }}</p>
+                </div>
+            </div>
+        </article>
+    {% endif %}
+{% endblock content %}

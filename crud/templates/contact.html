@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+{% block content %}
+        <article class="media content-section">
+            <div class="media-body">
+                <div class="article-metadata">
+                    {{ post.firstname }} {{ post.lastname }}
+                </div>
+                <h2> Contact on <a href="tel:{{ post.number }}"> {{ post.number }}</a> </h2>
+                    Or
+                <h2> reach out on <a href="mailto: {{ post.email }}"> {{ post.email }} </a> </h2>
+            </div>
+        </article>
+{% endblock content %}

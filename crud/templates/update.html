@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div>
+        <form action="" method="POST">
+            {{ form.hidden_tag() }}
+            <fieldset class="form-group">
+                <legend> Update Contact </legend>
+                <div class="form-group ">
+                    {{ form.firstname.label(class="form-control-label")}}
+                    {{ form.firstname(class=" form-control form-control-lg")}}
+                </div>
+                <div class="form-group">
+                    {{ form.lastname.label(class="form-control-label")}}
+                    {{ form.lastname(class=" form-control form-control-lg")}}
+                </div>
+                <div class="form-group">
+                    {{ form.title.label(class="form-control-label")}}
+                    {{ form.title(class=" form-control form-control-lg")}}
+                </div>
+                <div class="form-group">
+                    {{ form.email.label(class="form-control-label")}}
+                    {% if form.email.errors %}
+                        {{ form.email(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.email.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.email(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    {{ form.number.label(class="form-control-label")}}
+                    {% if form.number.errors %}
+                        {{ form.number(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.number.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.number(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    {{ form.about.label(class="form-control-label")}}
+                    {{ form.about(class=" form-control form-control-lg")}}
+                </div>
+            </fieldset>
+            <div class="form-group">
+                {{ form.submit(class="btn btn-outline-info")}}
+            </div>
+        </form>
+    </div>
+    
+{% endblock content %}
